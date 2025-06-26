@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-docker exec -it rmf_scheduler_c bash -c "source /ros2_ws/install/setup.bash && ros2 topic pub -1 /rmf_scheduler_api_requests rmf_task_msgs/msg/ApiRequest \
+ros2 topic pub -1 /rmf_scheduler_api_requests rmf_task_msgs/msg/ApiRequest \
   '{
     "request_id": "'$(uuidgen)'",
     "json_msg": "{
@@ -18,4 +18,4 @@ docker exec -it rmf_scheduler_c bash -c "source /ros2_ws/install/setup.bash && r
         \"series\": {}
       }
     }"
-  }'"
+  }'
